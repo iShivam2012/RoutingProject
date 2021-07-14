@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MainHeader from "./Components/MainHeader";
 import Product from "./Pages/Product";
 import ProductDetail from "./Pages/ProductDetail";
@@ -8,15 +8,17 @@ function App() {
   return (
     <div>
       <MainHeader />
-      <Route path="/welcome">
-        <Welcome />
-      </Route>
-      <Route path="/product">
-        <Product />
-      </Route>
-      <Route path="/product-detail/:productId">
-        <ProductDetail />
-      </Route>
+      <Switch>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/product" exact>
+          <Product />
+        </Route>
+        <Route path="/product/:productId">
+          <ProductDetail />
+        </Route>
+      </Switch>
       <h2>Let's get started!</h2>
     </div>
   );
