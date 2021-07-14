@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 const Product = () => {
   return (
     <Fragment>
-      <header>
-        <p>YO! Products</p>;
-      </header>
       <main>
+        <h1>YO! Products</h1>
         <section>
           <ul>
             <li>
